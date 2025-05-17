@@ -1,0 +1,131 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="journal_amelioaration">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="date" type="TIMESTAMP"/>
+        <column name="annee" type="BIGINT"/>
+        <column name="date_butoir" type="TIMESTAMP"/>
+        <column name="date_realisation" type="TIMESTAMP"/>
+        <column name="date_evaluation" type="TIMESTAMP"/>
+        <column name="date_cloture" type="TIMESTAMP"/>
+        <column name="avancement" type="NUMERIC"/>
+        <column name="description_ecrat" type="VARCHAR(500)"/>
+        <column name="description_action" type="VARCHAR(500)"/>
+        <column name="commentaire" type="VARCHAR(500)"/>
+        <column name="cause_suppose" type="VARCHAR(500)"/>
+
+        <column name="systeme_management_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="categorie_ecrate_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="origine_ecrate_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="type_action_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="collaborator_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="critere_evaluation_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="resultat_evaluation_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="journal_amelioaration"
+              baseColumnNames="systeme_management_id"
+              referencedTableName="systeme_management"
+              referencedColumnNames="id"
+              constraintName="fk_journal_amelioaration_systeme_management"/>
+      <addForeignKeyConstraint
+              baseTableName="journal_amelioaration"
+              baseColumnNames="categorie_ecrate_id"
+              referencedTableName="categorie_ecrate"
+              referencedColumnNames="id"
+              constraintName="fk_journal_amelioaration_categorie_ecrate"/>
+      <addForeignKeyConstraint
+              baseTableName="journal_amelioaration"
+              baseColumnNames="origine_ecrate_id"
+              referencedTableName="origine_ecrate"
+              referencedColumnNames="id"
+              constraintName="fk_journal_amelioaration_origine_ecrate"/>
+      <addForeignKeyConstraint
+              baseTableName="journal_amelioaration"
+              baseColumnNames="type_action_id"
+              referencedTableName="type_action"
+              referencedColumnNames="id"
+              constraintName="fk_journal_amelioaration_type_action"/>
+      <addForeignKeyConstraint
+              baseTableName="journal_amelioaration"
+              baseColumnNames="collaborator_id"
+              referencedTableName="collaborator"
+              referencedColumnNames="id"
+              constraintName="fk_journal_amelioaration_collaborator"/>
+      <addForeignKeyConstraint
+              baseTableName="journal_amelioaration"
+              baseColumnNames="critere_evaluation_id"
+              referencedTableName="critere_evaluation"
+              referencedColumnNames="id"
+              constraintName="fk_journal_amelioaration_critere_evaluation"/>
+      <addForeignKeyConstraint
+              baseTableName="journal_amelioaration"
+              baseColumnNames="resultat_evaluation_id"
+              referencedTableName="resultat_evaluation"
+              referencedColumnNames="id"
+              constraintName="fk_journal_amelioaration_resultat_evaluation"/>
+
+  </changeSet>
+
+    <!-- Create Sequence for ContainerType -->
+  <changeSet id="3" author="your-name">
+    <createSequence sequenceName="journal_amelioaration_seq" startValue="1" incrementBy="1"/>
+  </changeSet>
+
+  <!-- Load Data from CSV -->
+  <changeSet id="4" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/journal/JournalAmelioaration.csv"
+            tableName="journal_amelioaration">
+      <column name="id" type="NUMERIC"/>
+          <column name="date" type="TIMESTAMP"/>
+          <column name="annee" type="NUMERIC"/>
+          <column name="date_butoir" type="TIMESTAMP"/>
+          <column name="date_realisation" type="TIMESTAMP"/>
+          <column name="date_evaluation" type="TIMESTAMP"/>
+          <column name="date_cloture" type="TIMESTAMP"/>
+          <column name="avancement" type="NUMERIC"/>
+          <column name="description_ecrat" type="STRING"/>
+          <column name="description_action" type="STRING"/>
+          <column name="commentaire" type="STRING"/>
+          <column name="cause_suppose" type="STRING"/>
+        <column name="systeme_management" type="BIGINT"/>
+        <column name="categorie_ecrate" type="BIGINT"/>
+        <column name="origine_ecrate" type="BIGINT"/>
+        <column name="type_action" type="BIGINT"/>
+        <column name="collaborator" type="BIGINT"/>
+        <column name="critere_evaluation" type="BIGINT"/>
+        <column name="resultat_evaluation" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

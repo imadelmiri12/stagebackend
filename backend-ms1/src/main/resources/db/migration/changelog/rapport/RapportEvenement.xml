@@ -1,0 +1,141 @@
+<!-- db/changelog-1.1-container.xml -->
+
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+  <!-- Create Container Table -->
+    <changeSet id="1" author="your-name">
+    <createTable tableName="rapport_evenement">
+      <column name="id" type="BIGINT">
+        <constraints primaryKey="true" nullable="false"/>
+      </column>
+        <column name="code" type="VARCHAR(500)"/>
+        <column name="date_evenement" type="TIMESTAMP"/>
+        <column name="date_soumission" type="TIMESTAMP"/>
+        <column name="attachments" type="VARCHAR(500)"/>
+        <column name="description" type="VARCHAR(500)"/>
+        <column name="recommendation" type="VARCHAR(500)"/>
+        <column name="directive_pmj_chef" type="VARCHAR(500)"/>
+        <column name="mois" type="BIGINT"/>
+        <column name="annee" type="BIGINT"/>
+        <column name="wind_direction" type="NUMERIC"/>
+        <column name="wind_force" type="NUMERIC"/>
+        <column name="current_direction" type="NUMERIC"/>
+        <column name="current_force" type="NUMERIC"/>
+        <column name="swell_heigth" type="NUMERIC"/>
+        <column name="swell_direction" type="NUMERIC"/>
+        <column name="fonde" type="TINYINT"/>
+
+        <column name="port_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="type_evenement_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="collaborator_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="vessel_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="type_rapport_evenement_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="secteur_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+        <column name="journal_amelioaration_id" type="BIGINT">
+          <constraints nullable="false"/>
+        </column>
+
+    </createTable>
+  </changeSet>
+
+    <!-- Add foreign key constraint -->
+  <changeSet id="2" author="your-name">
+      <addForeignKeyConstraint
+              baseTableName="rapport_evenement"
+              baseColumnNames="port_id"
+              referencedTableName="port"
+              referencedColumnNames="id"
+              constraintName="fk_rapport_evenement_port"/>
+      <addForeignKeyConstraint
+              baseTableName="rapport_evenement"
+              baseColumnNames="type_evenement_id"
+              referencedTableName="type_evenement"
+              referencedColumnNames="id"
+              constraintName="fk_rapport_evenement_type_evenement"/>
+      <addForeignKeyConstraint
+              baseTableName="rapport_evenement"
+              baseColumnNames="collaborator_id"
+              referencedTableName="collaborator"
+              referencedColumnNames="id"
+              constraintName="fk_rapport_evenement_collaborator"/>
+      <addForeignKeyConstraint
+              baseTableName="rapport_evenement"
+              baseColumnNames="vessel_id"
+              referencedTableName="vessel"
+              referencedColumnNames="id"
+              constraintName="fk_rapport_evenement_vessel"/>
+      <addForeignKeyConstraint
+              baseTableName="rapport_evenement"
+              baseColumnNames="type_rapport_evenement_id"
+              referencedTableName="type_rapport_evenement"
+              referencedColumnNames="id"
+              constraintName="fk_rapport_evenement_type_rapport_evenement"/>
+      <addForeignKeyConstraint
+              baseTableName="rapport_evenement"
+              baseColumnNames="secteur_id"
+              referencedTableName="secteur"
+              referencedColumnNames="id"
+              constraintName="fk_rapport_evenement_secteur"/>
+      <addForeignKeyConstraint
+              baseTableName="rapport_evenement"
+              baseColumnNames="journal_amelioaration_id"
+              referencedTableName="journal_amelioaration"
+              referencedColumnNames="id"
+              constraintName="fk_rapport_evenement_journal_amelioaration"/>
+
+  </changeSet>
+
+    <!-- Create Sequence for ContainerType -->
+  <changeSet id="3" author="your-name">
+    <createSequence sequenceName="rapport_evenement_seq" startValue="1" incrementBy="1"/>
+  </changeSet>
+
+  <!-- Load Data from CSV -->
+  <changeSet id="4" author="your-name">
+    <loadData
+            file="classpath:/db/migration/data/rapport/RapportEvenement.csv"
+            tableName="rapport_evenement">
+      <column name="id" type="NUMERIC"/>
+          <column name="code" type="STRING"/>
+          <column name="date_evenement" type="TIMESTAMP"/>
+          <column name="date_soumission" type="TIMESTAMP"/>
+          <column name="attachments" type="STRING"/>
+          <column name="description" type="STRING"/>
+          <column name="recommendation" type="STRING"/>
+          <column name="directive_pmj_chef" type="STRING"/>
+          <column name="mois" type="NUMERIC"/>
+          <column name="annee" type="NUMERIC"/>
+          <column name="wind_direction" type="NUMERIC"/>
+          <column name="wind_force" type="NUMERIC"/>
+          <column name="current_direction" type="NUMERIC"/>
+          <column name="current_force" type="NUMERIC"/>
+          <column name="swell_heigth" type="NUMERIC"/>
+          <column name="swell_direction" type="NUMERIC"/>
+          <column name="fonde" type="BOOLEAN"/>
+        <column name="port" type="BIGINT"/>
+        <column name="type_evenement" type="BIGINT"/>
+        <column name="collaborator" type="BIGINT"/>
+        <column name="vessel" type="BIGINT"/>
+        <column name="type_rapport_evenement" type="BIGINT"/>
+        <column name="secteur" type="BIGINT"/>
+        <column name="journal_amelioaration" type="BIGINT"/>
+    </loadData>
+  </changeSet>
+
+
+</databaseChangeLog>

@@ -1,0 +1,1915 @@
+openapi: 3.0.3
+info:
+  title: Title
+  description: Title
+  version: 1.0.0
+servers:
+  - url: 'https'
+paths:
+  /journalAmelioarations:
+    get:
+      summary: List all journalAmelioarations
+      operationId: listJournalAmelioarations
+      tags:
+        - journalAmelioarations
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of journalAmelioarations
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/JournalAmelioarations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a journalAmelioaration
+      operationId: createJournalAmelioarations
+      tags:
+        - journalAmelioarations
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /journalAmelioarations/{journalAmelioarationId}:
+    get:
+      summary: Info for a specific journalAmelioaration
+      operationId: showJournalAmelioarationById
+      tags:
+        - journalAmelioarations
+      parameters:
+        - name: journalAmelioarationId
+          in: path
+          required: true
+          description: The id of the journalAmelioaration to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/JournalAmelioarations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /systemeManagements:
+    get:
+      summary: List all systemeManagements
+      operationId: listSystemeManagements
+      tags:
+        - systemeManagements
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of systemeManagements
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/SystemeManagements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a systemeManagement
+      operationId: createSystemeManagements
+      tags:
+        - systemeManagements
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /systemeManagements/{systemeManagementId}:
+    get:
+      summary: Info for a specific systemeManagement
+      operationId: showSystemeManagementById
+      tags:
+        - systemeManagements
+      parameters:
+        - name: systemeManagementId
+          in: path
+          required: true
+          description: The id of the systemeManagement to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/SystemeManagements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /rapportEvenements:
+    get:
+      summary: List all rapportEvenements
+      operationId: listRapportEvenements
+      tags:
+        - rapportEvenements
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of rapportEvenements
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/RapportEvenements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a rapportEvenement
+      operationId: createRapportEvenements
+      tags:
+        - rapportEvenements
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /rapportEvenements/{rapportEvenementId}:
+    get:
+      summary: Info for a specific rapportEvenement
+      operationId: showRapportEvenementById
+      tags:
+        - rapportEvenements
+      parameters:
+        - name: rapportEvenementId
+          in: path
+          required: true
+          description: The id of the rapportEvenement to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/RapportEvenements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /moiss:
+    get:
+      summary: List all moiss
+      operationId: listMoiss
+      tags:
+        - moiss
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of moiss
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Moiss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a mois
+      operationId: createMoiss
+      tags:
+        - moiss
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /moiss/{moisId}:
+    get:
+      summary: Info for a specific mois
+      operationId: showMoisById
+      tags:
+        - moiss
+      parameters:
+        - name: moisId
+          in: path
+          required: true
+          description: The id of the mois to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Moiss'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /ports:
+    get:
+      summary: List all ports
+      operationId: listPorts
+      tags:
+        - ports
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of ports
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Ports'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a port
+      operationId: createPorts
+      tags:
+        - ports
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /ports/{portId}:
+    get:
+      summary: Info for a specific port
+      operationId: showPortById
+      tags:
+        - ports
+      parameters:
+        - name: portId
+          in: path
+          required: true
+          description: The id of the port to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Ports'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /rapportEvenementMensuelSecteurs:
+    get:
+      summary: List all rapportEvenementMensuelSecteurs
+      operationId: listRapportEvenementMensuelSecteurs
+      tags:
+        - rapportEvenementMensuelSecteurs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of rapportEvenementMensuelSecteurs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/RapportEvenementMensuelSecteurs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a rapportEvenementMensuelSecteur
+      operationId: createRapportEvenementMensuelSecteurs
+      tags:
+        - rapportEvenementMensuelSecteurs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /rapportEvenementMensuelSecteurs/{rapportEvenementMensuelSecteurId}:
+    get:
+      summary: Info for a specific rapportEvenementMensuelSecteur
+      operationId: showRapportEvenementMensuelSecteurById
+      tags:
+        - rapportEvenementMensuelSecteurs
+      parameters:
+        - name: rapportEvenementMensuelSecteurId
+          in: path
+          required: true
+          description: The id of the rapportEvenementMensuelSecteur to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/RapportEvenementMensuelSecteurs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeVessels:
+    get:
+      summary: List all typeVessels
+      operationId: listTypeVessels
+      tags:
+        - typeVessels
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeVessels
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeVessels'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeVessel
+      operationId: createTypeVessels
+      tags:
+        - typeVessels
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeVessels/{typeVesselId}:
+    get:
+      summary: Info for a specific typeVessel
+      operationId: showTypeVesselById
+      tags:
+        - typeVessels
+      parameters:
+        - name: typeVesselId
+          in: path
+          required: true
+          description: The id of the typeVessel to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeVessels'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeEvenements:
+    get:
+      summary: List all typeEvenements
+      operationId: listTypeEvenements
+      tags:
+        - typeEvenements
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeEvenements
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeEvenements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeEvenement
+      operationId: createTypeEvenements
+      tags:
+        - typeEvenements
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeEvenements/{typeEvenementId}:
+    get:
+      summary: Info for a specific typeEvenement
+      operationId: showTypeEvenementById
+      tags:
+        - typeEvenements
+      parameters:
+        - name: typeEvenementId
+          in: path
+          required: true
+          description: The id of the typeEvenement to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeEvenements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeActions:
+    get:
+      summary: List all typeActions
+      operationId: listTypeActions
+      tags:
+        - typeActions
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeActions
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeActions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeAction
+      operationId: createTypeActions
+      tags:
+        - typeActions
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeActions/{typeActionId}:
+    get:
+      summary: Info for a specific typeAction
+      operationId: showTypeActionById
+      tags:
+        - typeActions
+      parameters:
+        - name: typeActionId
+          in: path
+          required: true
+          description: The id of the typeAction to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeActions'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /vessels:
+    get:
+      summary: List all vessels
+      operationId: listVessels
+      tags:
+        - vessels
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of vessels
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Vessels'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a vessel
+      operationId: createVessels
+      tags:
+        - vessels
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /vessels/{vesselId}:
+    get:
+      summary: Info for a specific vessel
+      operationId: showVesselById
+      tags:
+        - vessels
+      parameters:
+        - name: vesselId
+          in: path
+          required: true
+          description: The id of the vessel to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Vessels'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /collaborators:
+    get:
+      summary: List all collaborators
+      operationId: listCollaborators
+      tags:
+        - collaborators
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of collaborators
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Collaborators'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a collaborator
+      operationId: createCollaborators
+      tags:
+        - collaborators
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /collaborators/{collaboratorId}:
+    get:
+      summary: Info for a specific collaborator
+      operationId: showCollaboratorById
+      tags:
+        - collaborators
+      parameters:
+        - name: collaboratorId
+          in: path
+          required: true
+          description: The id of the collaborator to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Collaborators'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /origineEcrates:
+    get:
+      summary: List all origineEcrates
+      operationId: listOrigineEcrates
+      tags:
+        - origineEcrates
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of origineEcrates
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/OrigineEcrates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a origineEcrate
+      operationId: createOrigineEcrates
+      tags:
+        - origineEcrates
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /origineEcrates/{origineEcrateId}:
+    get:
+      summary: Info for a specific origineEcrate
+      operationId: showOrigineEcrateById
+      tags:
+        - origineEcrates
+      parameters:
+        - name: origineEcrateId
+          in: path
+          required: true
+          description: The id of the origineEcrate to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/OrigineEcrates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /secteurs:
+    get:
+      summary: List all secteurs
+      operationId: listSecteurs
+      tags:
+        - secteurs
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of secteurs
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Secteurs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a secteur
+      operationId: createSecteurs
+      tags:
+        - secteurs
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /secteurs/{secteurId}:
+    get:
+      summary: Info for a specific secteur
+      operationId: showSecteurById
+      tags:
+        - secteurs
+      parameters:
+        - name: secteurId
+          in: path
+          required: true
+          description: The id of the secteur to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Secteurs'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeCollaborators:
+    get:
+      summary: List all typeCollaborators
+      operationId: listTypeCollaborators
+      tags:
+        - typeCollaborators
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeCollaborators
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeCollaborators'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeCollaborator
+      operationId: createTypeCollaborators
+      tags:
+        - typeCollaborators
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeCollaborators/{typeCollaboratorId}:
+    get:
+      summary: Info for a specific typeCollaborator
+      operationId: showTypeCollaboratorById
+      tags:
+        - typeCollaborators
+      parameters:
+        - name: typeCollaboratorId
+          in: path
+          required: true
+          description: The id of the typeCollaborator to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeCollaborators'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /rapportEvenementMensuelSecteurDetails:
+    get:
+      summary: List all rapportEvenementMensuelSecteurDetails
+      operationId: listRapportEvenementMensuelSecteurDetails
+      tags:
+        - rapportEvenementMensuelSecteurDetails
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of rapportEvenementMensuelSecteurDetails
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/RapportEvenementMensuelSecteurDetails'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a rapportEvenementMensuelSecteurDetail
+      operationId: createRapportEvenementMensuelSecteurDetails
+      tags:
+        - rapportEvenementMensuelSecteurDetails
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /rapportEvenementMensuelSecteurDetails/{rapportEvenementMensuelSecteurDetailId}:
+    get:
+      summary: Info for a specific rapportEvenementMensuelSecteurDetail
+      operationId: showRapportEvenementMensuelSecteurDetailById
+      tags:
+        - rapportEvenementMensuelSecteurDetails
+      parameters:
+        - name: rapportEvenementMensuelSecteurDetailId
+          in: path
+          required: true
+          description: The id of the rapportEvenementMensuelSecteurDetail to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/RapportEvenementMensuelSecteurDetails'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /critereEvaluations:
+    get:
+      summary: List all critereEvaluations
+      operationId: listCritereEvaluations
+      tags:
+        - critereEvaluations
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of critereEvaluations
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/CritereEvaluations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a critereEvaluation
+      operationId: createCritereEvaluations
+      tags:
+        - critereEvaluations
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /critereEvaluations/{critereEvaluationId}:
+    get:
+      summary: Info for a specific critereEvaluation
+      operationId: showCritereEvaluationById
+      tags:
+        - critereEvaluations
+      parameters:
+        - name: critereEvaluationId
+          in: path
+          required: true
+          description: The id of the critereEvaluation to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/CritereEvaluations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /resultatEvaluations:
+    get:
+      summary: List all resultatEvaluations
+      operationId: listResultatEvaluations
+      tags:
+        - resultatEvaluations
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of resultatEvaluations
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/ResultatEvaluations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a resultatEvaluation
+      operationId: createResultatEvaluations
+      tags:
+        - resultatEvaluations
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /resultatEvaluations/{resultatEvaluationId}:
+    get:
+      summary: Info for a specific resultatEvaluation
+      operationId: showResultatEvaluationById
+      tags:
+        - resultatEvaluations
+      parameters:
+        - name: resultatEvaluationId
+          in: path
+          required: true
+          description: The id of the resultatEvaluation to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/ResultatEvaluations'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /rapportEvenementMensuels:
+    get:
+      summary: List all rapportEvenementMensuels
+      operationId: listRapportEvenementMensuels
+      tags:
+        - rapportEvenementMensuels
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of rapportEvenementMensuels
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/RapportEvenementMensuels'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a rapportEvenementMensuel
+      operationId: createRapportEvenementMensuels
+      tags:
+        - rapportEvenementMensuels
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /rapportEvenementMensuels/{rapportEvenementMensuelId}:
+    get:
+      summary: Info for a specific rapportEvenementMensuel
+      operationId: showRapportEvenementMensuelById
+      tags:
+        - rapportEvenementMensuels
+      parameters:
+        - name: rapportEvenementMensuelId
+          in: path
+          required: true
+          description: The id of the rapportEvenementMensuel to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/RapportEvenementMensuels'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /categorieEcrates:
+    get:
+      summary: List all categorieEcrates
+      operationId: listCategorieEcrates
+      tags:
+        - categorieEcrates
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of categorieEcrates
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/CategorieEcrates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a categorieEcrate
+      operationId: createCategorieEcrates
+      tags:
+        - categorieEcrates
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /categorieEcrates/{categorieEcrateId}:
+    get:
+      summary: Info for a specific categorieEcrate
+      operationId: showCategorieEcrateById
+      tags:
+        - categorieEcrates
+      parameters:
+        - name: categorieEcrateId
+          in: path
+          required: true
+          description: The id of the categorieEcrate to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/CategorieEcrates'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /trimestres:
+    get:
+      summary: List all trimestres
+      operationId: listTrimestres
+      tags:
+        - trimestres
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of trimestres
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/Trimestres'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a trimestre
+      operationId: createTrimestres
+      tags:
+        - trimestres
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /trimestres/{trimestreId}:
+    get:
+      summary: Info for a specific trimestre
+      operationId: showTrimestreById
+      tags:
+        - trimestres
+      parameters:
+        - name: trimestreId
+          in: path
+          required: true
+          description: The id of the trimestre to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/Trimestres'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeRapportEvenements:
+    get:
+      summary: List all typeRapportEvenements
+      operationId: listTypeRapportEvenements
+      tags:
+        - typeRapportEvenements
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of typeRapportEvenements
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/TypeRapportEvenements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a typeRapportEvenement
+      operationId: createTypeRapportEvenements
+      tags:
+        - typeRapportEvenements
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /typeRapportEvenements/{typeRapportEvenementId}:
+    get:
+      summary: Info for a specific typeRapportEvenement
+      operationId: showTypeRapportEvenementById
+      tags:
+        - typeRapportEvenements
+      parameters:
+        - name: typeRapportEvenementId
+          in: path
+          required: true
+          description: The id of the typeRapportEvenement to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/TypeRapportEvenements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /rapportEvenementMensuelTypeEvenements:
+    get:
+      summary: List all rapportEvenementMensuelTypeEvenements
+      operationId: listRapportEvenementMensuelTypeEvenements
+      tags:
+        - rapportEvenementMensuelTypeEvenements
+      parameters:
+        - name: limit
+          in: query
+          description: How many items to return at one time (max 100)
+          required: false
+          type: integer
+          format: int32
+      responses:
+        "200":
+          description: A paged array of rapportEvenementMensuelTypeEvenements
+          headers:
+            x-next:
+              type: string
+              description: A link to the next page of responses
+          schema:
+            $ref: '#/definitions/RapportEvenementMensuelTypeEvenements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+    post:
+      summary: Create a rapportEvenementMensuelTypeEvenement
+      operationId: createRapportEvenementMensuelTypeEvenements
+      tags:
+        - rapportEvenementMensuelTypeEvenements
+      responses:
+        "201":
+          description: Null response
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  /rapportEvenementMensuelTypeEvenements/{rapportEvenementMensuelTypeEvenementId}:
+    get:
+      summary: Info for a specific rapportEvenementMensuelTypeEvenement
+      operationId: showRapportEvenementMensuelTypeEvenementById
+      tags:
+        - rapportEvenementMensuelTypeEvenements
+      parameters:
+        - name: rapportEvenementMensuelTypeEvenementId
+          in: path
+          required: true
+          description: The id of the rapportEvenementMensuelTypeEvenement to retrieve
+          type: string
+      responses:
+        "200":
+          description: Expected response to a valid request
+          schema:
+            $ref: '#/definitions/RapportEvenementMensuelTypeEvenements'
+        default:
+          description: unexpected error
+          schema:
+            $ref: '#/definitions/Error'
+  
+
+
+definitions:
+  JournalAmelioaration:
+    type: "object"
+    required:
+      - id
+      - date
+      - annee
+      - dateButoir
+      - dateRealisation
+      - dateEvaluation
+      - dateCloture
+      - avancement
+      - descriptionEcrat
+      - descriptionAction
+      - commentaire
+      - causeSuppose
+    properties:
+      id:
+        type: int
+      date:
+        type: date
+      annee:
+        type: int
+      dateButoir:
+        type: date
+      dateRealisation:
+        type: date
+      dateEvaluation:
+        type: date
+      dateCloture:
+        type: date
+      avancement:
+        type: number
+      descriptionEcrat:
+        type: string
+      descriptionAction:
+        type: string
+      commentaire:
+        type: string
+      causeSuppose:
+        type: string
+  JournalAmelioarations:
+    type: array
+    items:
+      $ref: '#/definitions/JournalAmelioaration'
+  SystemeManagement:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - style
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+  SystemeManagements:
+    type: array
+    items:
+      $ref: '#/definitions/SystemeManagement'
+  RapportEvenement:
+    type: "object"
+    required:
+      - id
+      - code
+      - dateEvenement
+      - dateSoumission
+      - attachments
+      - description
+      - recommendation
+      - directivePmjChef
+      - mois
+      - annee
+      - windDirection
+      - windForce
+      - currentDirection
+      - currentForce
+      - swellHeigth
+      - swellDirection
+      - fonde
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      dateEvenement:
+        type: date
+      dateSoumission:
+        type: date
+      attachments:
+        type: string
+      description:
+        type: string
+      recommendation:
+        type: string
+      directivePmjChef:
+        type: string
+      mois:
+        type: int
+      annee:
+        type: int
+      windDirection:
+        type: number
+      windForce:
+        type: number
+      currentDirection:
+        type: number
+      currentForce:
+        type: number
+      swellHeigth:
+        type: number
+      swellDirection:
+        type: number
+      fonde:
+        type: boolean
+  RapportEvenements:
+    type: array
+    items:
+      $ref: '#/definitions/RapportEvenement'
+  Mois:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - style
+      - numero
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+      numero:
+        type: int
+  Moiss:
+    type: array
+    items:
+      $ref: '#/definitions/Mois'
+  Port:
+    type: "object"
+    required:
+      - id
+      - indexation
+      - code
+      - label
+      - style
+      - color
+    properties:
+      id:
+        type: int
+      indexation:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+      color:
+        type: string
+  Ports:
+    type: array
+    items:
+      $ref: '#/definitions/Port'
+  RapportEvenementMensuelSecteur:
+    type: "object"
+    required:
+      - id
+      - total
+      - indicateurGlobal
+      - totalCumul
+      - indicateurGlobalCumul
+    properties:
+      id:
+        type: int
+      total:
+        type: number
+      indicateurGlobal:
+        type: number
+      totalCumul:
+        type: number
+      indicateurGlobalCumul:
+        type: number
+  RapportEvenementMensuelSecteurs:
+    type: array
+    items:
+      $ref: '#/definitions/RapportEvenementMensuelSecteur'
+  TypeVessel:
+    type: "object"
+    required:
+      - id
+      - indexation
+      - code
+      - label
+      - style
+      - color
+    properties:
+      id:
+        type: int
+      indexation:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+      color:
+        type: string
+  TypeVessels:
+    type: array
+    items:
+      $ref: '#/definitions/TypeVessel'
+  TypeEvenement:
+    type: "object"
+    required:
+      - id
+      - indexation
+      - code
+      - label
+      - style
+      - color
+    properties:
+      id:
+        type: int
+      indexation:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+      color:
+        type: string
+  TypeEvenements:
+    type: array
+    items:
+      $ref: '#/definitions/TypeEvenement'
+  TypeAction:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - style
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+  TypeActions:
+    type: array
+    items:
+      $ref: '#/definitions/TypeAction'
+  Vessel:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - style
+      - loa
+      - draft
+      - airDraft
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+      loa:
+        type: number
+      draft:
+        type: number
+      airDraft:
+        type: number
+  Vessels:
+    type: array
+    items:
+      $ref: '#/definitions/Vessel'
+  Collaborator:
+    type: "object"
+    required:
+      - id
+      - description
+      - accountNonExpired
+      - username
+      - passwordChanged
+      - accountNonLocked
+      - password
+      - email
+      - enabled
+      - credentialsNonExpired
+    properties:
+      id:
+        type: int
+      description:
+        type: string
+      accountNonExpired:
+        type: boolean
+      username:
+        type: string
+      passwordChanged:
+        type: boolean
+      accountNonLocked:
+        type: boolean
+      password:
+        type: string
+      email:
+        type: string
+      enabled:
+        type: boolean
+      credentialsNonExpired:
+        type: boolean
+  Collaborators:
+    type: array
+    items:
+      $ref: '#/definitions/Collaborator'
+  OrigineEcrate:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - style
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+  OrigineEcrates:
+    type: array
+    items:
+      $ref: '#/definitions/OrigineEcrate'
+  Secteur:
+    type: "object"
+    required:
+      - id
+      - indexation
+      - code
+      - label
+      - style
+      - color
+    properties:
+      id:
+        type: int
+      indexation:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+      color:
+        type: string
+  Secteurs:
+    type: array
+    items:
+      $ref: '#/definitions/Secteur'
+  TypeCollaborator:
+    type: "object"
+    required:
+      - id
+      - indexation
+      - code
+      - label
+      - style
+      - color
+    properties:
+      id:
+        type: int
+      indexation:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+      color:
+        type: string
+  TypeCollaborators:
+    type: array
+    items:
+      $ref: '#/definitions/TypeCollaborator'
+  RapportEvenementMensuelSecteurDetail:
+    type: "object"
+    required:
+      - id
+      - total
+      - indicateurGlobal
+    properties:
+      id:
+        type: int
+      total:
+        type: number
+      indicateurGlobal:
+        type: number
+  RapportEvenementMensuelSecteurDetails:
+    type: array
+    items:
+      $ref: '#/definitions/RapportEvenementMensuelSecteurDetail'
+  CritereEvaluation:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - style
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+  CritereEvaluations:
+    type: array
+    items:
+      $ref: '#/definitions/CritereEvaluation'
+  ResultatEvaluation:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - style
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+  ResultatEvaluations:
+    type: array
+    items:
+      $ref: '#/definitions/ResultatEvaluation'
+  RapportEvenementMensuel:
+    type: "object"
+    required:
+      - id
+      - code
+      - dateEmission
+      - description
+      - mois
+      - annee
+      - nombreMouvement
+      - total
+      - indicateurGlobal
+      - nombreMouvementCumul
+      - totalCumul
+      - indicateurGlobalCumul
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      dateEmission:
+        type: date
+      description:
+        type: string
+      mois:
+        type: int
+      annee:
+        type: int
+      nombreMouvement:
+        type: int
+      total:
+        type: number
+      indicateurGlobal:
+        type: number
+      nombreMouvementCumul:
+        type: int
+      totalCumul:
+        type: number
+      indicateurGlobalCumul:
+        type: number
+  RapportEvenementMensuels:
+    type: array
+    items:
+      $ref: '#/definitions/RapportEvenementMensuel'
+  CategorieEcrate:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - style
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+  CategorieEcrates:
+    type: array
+    items:
+      $ref: '#/definitions/CategorieEcrate'
+  Trimestre:
+    type: "object"
+    required:
+      - id
+      - code
+      - label
+      - style
+    properties:
+      id:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+  Trimestres:
+    type: array
+    items:
+      $ref: '#/definitions/Trimestre'
+  TypeRapportEvenement:
+    type: "object"
+    required:
+      - id
+      - indexation
+      - code
+      - label
+      - style
+      - color
+    properties:
+      id:
+        type: int
+      indexation:
+        type: int
+      code:
+        type: string
+      label:
+        type: string
+      style:
+        type: string
+      color:
+        type: string
+  TypeRapportEvenements:
+    type: array
+    items:
+      $ref: '#/definitions/TypeRapportEvenement'
+  RapportEvenementMensuelTypeEvenement:
+    type: "object"
+    required:
+      - id
+      - total
+      - totalCumul
+      - indicateurGlobalCumul
+    properties:
+      id:
+        type: int
+      total:
+        type: number
+      totalCumul:
+        type: number
+      indicateurGlobalCumul:
+        type: number
+  RapportEvenementMensuelTypeEvenements:
+    type: array
+    items:
+      $ref: '#/definitions/RapportEvenementMensuelTypeEvenement'
+
+  Error:
+    type: "object"
+    required:
+      - code
+      - message
+    properties:
+      code:
+        type: integer
+        format: int32
+      message:
+        type: string

@@ -1,0 +1,29 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+                   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                   xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                   http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.0.xsd">
+
+            <include file="classpath:db/migration/changelog/journal/JournalAmelioaration.xml"/>
+        <include file="classpath:db/migration/changelog/journal/SystemeManagement.xml"/>
+        <include file="classpath:db/migration/changelog/rapport/RapportEvenement.xml"/>
+        <include file="classpath:db/migration/changelog/commun/Mois.xml"/>
+        <include file="classpath:db/migration/changelog/commun/Port.xml"/>
+        <include file="classpath:db/migration/changelog/mensuel/RapportEvenementMensuelSecteur.xml"/>
+        <include file="classpath:db/migration/changelog/commun/TypeVessel.xml"/>
+        <include file="classpath:db/migration/changelog/commun/TypeEvenement.xml"/>
+        <include file="classpath:db/migration/changelog/journal/TypeAction.xml"/>
+        <include file="classpath:db/migration/changelog/commun/Vessel.xml"/>
+        <include file="classpath:db/migration/changelog/actor/Collaborator.xml"/>
+        <include file="classpath:db/migration/changelog/journal/OrigineEcrate.xml"/>
+        <include file="classpath:db/migration/changelog/commun/Secteur.xml"/>
+        <include file="classpath:db/migration/changelog/commun/TypeCollaborator.xml"/>
+        <include file="classpath:db/migration/changelog/mensuel/RapportEvenementMensuelSecteurDetail.xml"/>
+        <include file="classpath:db/migration/changelog/journal/CritereEvaluation.xml"/>
+        <include file="classpath:db/migration/changelog/journal/ResultatEvaluation.xml"/>
+        <include file="classpath:db/migration/changelog/mensuel/RapportEvenementMensuel.xml"/>
+        <include file="classpath:db/migration/changelog/journal/CategorieEcrate.xml"/>
+        <include file="classpath:db/migration/changelog/indicateur/Trimestre.xml"/>
+        <include file="classpath:db/migration/changelog/commun/TypeRapportEvenement.xml"/>
+        <include file="classpath:db/migration/changelog/mensuel/RapportEvenementMensuelTypeEvenement.xml"/>
+
+</databaseChangeLog>
